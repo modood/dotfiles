@@ -8,26 +8,26 @@ Deploy
 
 The deployment will overwrite your configuration file, be sure to backup your existing configuration.
 
-> default backing up directory: `~/.dotfiles.backup`
-
 *   dotfiles:
 
-    ```bash
-    ./deploy/dotfiles && . ~/.zshrc
-    ```
+    default backing up directory: `~/.dotfiles.backup`
 
-    file list: .ackrc, .gitconfig, .myclirc, .zshrc, .Xmodmap.
+    file list: `.bashrc`, `.ackrc`, `.gitconfig`, `.myclirc`, `.zshrc`, `.vimshrc`, `.Xmodmap`, `.ansible.cfg`, `.ctags`
+
+    ```bash
+    make dotfiles && . ~/.zshrc
+    ```
 
 *   i3wm:
 
     ```
-    ./deploy/i3wm.sh
+    make i3wm
     ```
 
 *   tmux:
 
     ```
-    ./deploy/tmux.sh
+    make tmux
     ```
 
 Table Of Contents

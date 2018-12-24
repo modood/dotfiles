@@ -1,7 +1,0 @@
-- hosts: servers
-  gather_facts: false
-  tasks:
-    - name: copy .bashrc
-      copy:
-        src: "{{playbook_dir}}/.bashrc"
-        dest: "~"

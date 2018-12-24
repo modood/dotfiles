@@ -1,5 +1,0 @@
-[all:vars]
-ansible_python_interpreter = /usr/bin/python2
-
-[servers]
-modood.com

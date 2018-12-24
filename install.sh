@@ -3,15 +3,15 @@
 bakdir="$HOME/.dotfiles.backup"
 timestr=$(date +%Y%m%d%H%M)
 dotfiles=(
-  .bashrc
   .ackrc
+  .ansible.cfg
+  .bashrc
+  .ctags
   .gitconfig
   .myclirc
-  .zshrc
   .vimshrc
   .Xmodmap
-  .ansible.cfg
-  .ctags
+  .zshrc
 )
 
 if [ ! -d "$bakdir" ]; then
@@ -20,6 +20,7 @@ fi
 
 for i in ${dotfiles[@]};
 do
+    echo "Setting $i"
     if [ -f "$HOME/$i" ] || [ -h "$HOME/$i" ]; then
         cat "$HOME/$i" > "$bakdir/$timestr$i"
     fi

@@ -11,7 +11,6 @@ default backing up directory: `~/.dotfiles.backup`
 file list:
 `.ackrc`
 `.ansible.cfg`
-`.bashrc`
 `.ctags`
 `.gitconfig`
 `.myclirc`

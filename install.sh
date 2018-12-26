@@ -6,7 +6,6 @@ repo=https://github.com/modood/dotfiles/raw/master
 dotfiles=(
   .ackrc
   .ansible.cfg
-  .bashrc
   .ctags
   .gitconfig
   .myclirc

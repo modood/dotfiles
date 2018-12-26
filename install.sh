@@ -2,6 +2,7 @@
 
 bakdir="$HOME/.dotfiles.backup"
 timestr=$(date +%Y%m%d%H%M)
+repo=https://github.com/modood/dotfiles/raw/master
 dotfiles=(
   .ackrc
   .ansible.cfg
@@ -24,5 +25,5 @@ do
     if [ -f "$HOME/$i" ] || [ -h "$HOME/$i" ]; then
         cat "$HOME/$i" > "$bakdir/$timestr$i"
     fi
-    cp "$i" "$HOME/$i"
+    curl -Ls $repo/$i > $HOME/$i
 done

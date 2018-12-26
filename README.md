@@ -20,5 +20,5 @@ file list:
 `.zshrc`
 
 ```bash
-TODO && . ~/.zshrc
+curl -L https://github.com/modood/dotfiles/raw/master/install.sh | bash
 ```

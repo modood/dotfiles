@@ -120,10 +120,10 @@ done
 
 
 # https://github.com/robbyrussell/oh-my-zsh
-sudo chsh -s /bin/zsh
 if [ ! -d $HOME/.oh-my-zsh ]; then
   echo -e "\nInstalling oh-my-zsh..."
-  curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+  curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sudo sh
+  sudo chsh -s /bin/zsh
 fi
 
 # https://github.com/junegunn/fzf

@@ -24,6 +24,8 @@ done
 # name                          bin                                   desc
 ############################################################################################################################################
 # sudo                          sudo                                  Provide limited super user privileges to specific users
+# lsb-release                   lsb_release                           Linux Standard Base version reporting utility
+# lsb-core                                                            Linux Standard Base core support package
 # net-tools                     ifconfig, netstat, ...                NET-3 networking toolkit
 # telnet                        telnet                                basic telnet client
 # wget                          wget                                  retrieves files from the web
@@ -82,19 +84,22 @@ done
 # mongo-tools                   mongodump, mongoexport, mongotop, ... collection of tools for administering MongoDB servers
 # redis-tools                   redis-cli, redis-benchmark, ...       object/document-oriented database (client apps)
 
+# usb-creator-gtk               usb-creator-gtk                       create a startup disk using a CD or disc image (for GNOME)
+# telegram-desktop              telegram-desktop                      official telegram messaging app
 # transmission                  transmission-gtk                      lightweight BitTorrent client
 # vlc                           vlc                                   multimedia player and streamer
 # libreoffice                   writer, calc, impress, draw, ...      office productivity suite (metapackage)
+# virtualbox                    virtualbox, virtualbox-qt, ...        x86 virtualization solution - base binaries
 
 # docker-ce
 ############################################################################################################################################
 sudo apt update
-sudo apt install -y sudo net-tools telnet wget curl git git-extras make gcc g++ pkg-config unzip rar unrar \
+sudo apt install -y sudo lsb-release lsb-core net-tools telnet wget curl git git-extras make gcc g++ pkg-config unzip rar unrar \
                     mercurial binutils build-essential bison apt-transport-https ca-certificates software-properties-common gdebi \
                     sysstat nmon htop atop iotop iftop nethogs ethtool nicstat dstat vnstat pstack strace collectl \
                     python-pip python3-pip tmux zsh autojump ack-grep vim vim-gtk exuberant-ctags i3 suckless-tools flameshot ansible fcitx \
                     mycli mongodb-clients mongo-tools redis-tools \
-                    libreoffice transmission vlc \
+                    usb-creator-gtk telegram-desktop transmission vlc libreoffice virtualbox \
                     docker-ce
 
 # install debian packages

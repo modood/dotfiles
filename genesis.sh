@@ -136,6 +136,10 @@ fi
 if [ ! -d $HOME/.nvm ]; then
   echo -e "\nInstalling nvm..."
   curl -L https://github.com/creationix/nvm/raw/v0.33.11/install.sh | bash
+
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
   nvm install 8
   nvm use 8
   nvm alias default 8
@@ -147,6 +151,10 @@ fi
 if [ ! -d $HOME/.gvm ]; then
   echo -e "\nInstalling gvm..."
   curl -L https://github.com/moovweb/gvm/raw/master/binscripts/gvm-installer | bash
+
+  export GVM_ROOT="$HOME/.gvm"
+  [ -s "$GVM_ROOT/scripts/gvm" ] && \. "$GVM_ROOT/scripts/gvm"
+
   gvm install go1.4 -B
   gvm use go1.4
   gvm install go1.11

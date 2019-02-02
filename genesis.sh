@@ -62,7 +62,7 @@ done
 # vnstat                        vnstat, vnstatd                       console-based network traffic monitor
 # pstack                        pstack                                Display stack trace of a running process
 # strace                        strace                                System call tracer
-# collectl                      collectl, colmux                      Utility to collect Linux performance data
+# colordiff                     colordiff                             tool to colorize 'diff' output
 
 # python-pip                    pip, pip2                             alternative Python package installer
 # python-pip                    pip3                                  alternative Python package installer - Python 3 version of the package
@@ -96,7 +96,7 @@ done
 sudo apt update
 sudo apt install -y sudo lsb-release lsb-core net-tools telnet wget curl git git-extras make gcc g++ pkg-config unzip rar unrar \
                     mercurial binutils build-essential bison apt-transport-https ca-certificates software-properties-common gdebi \
-                    sysstat nmon htop atop iotop iftop nethogs ethtool nicstat dstat vnstat pstack strace collectl \
+                    sysstat nmon htop atop iotop iftop nethogs ethtool nicstat dstat vnstat pstack strace colordiff \
                     python-pip python3-pip tmux zsh autojump ack-grep vim vim-gtk exuberant-ctags i3 suckless-tools flameshot ansible fcitx \
                     mycli mongodb-clients mongo-tools redis-tools \
                     usb-creator-gtk telegram-desktop transmission vlc libreoffice virtualbox \
@@ -122,8 +122,8 @@ done
 # https://github.com/robbyrussell/oh-my-zsh
 if [ ! -d $HOME/.oh-my-zsh ]; then
   echo -e "\nInstalling oh-my-zsh..."
-  curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sudo sh
-  sudo chsh -s /bin/zsh
+  curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+  chsh -s /bin/zsh
 fi
 
 # https://github.com/junegunn/fzf

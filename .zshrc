@@ -49,6 +49,7 @@ alias sc="vi ~/.zshrc"
 alias scs=". ~/.zshrc"
 
 alias h="history | grep"
+function diff () { colordiff -u $@ | less; }
 
 # socks-cli
 if [ ! -d "$HOME/.socks-cli" ]; then
@@ -56,12 +57,14 @@ if [ ! -d "$HOME/.socks-cli" ]; then
 fi
 alias ss="source ~/.socks-cli/activate"
 
-alias dps="sudo docker ps"
-alias dpsa="sudo docker ps -a"
-alias di="sudo docker images"
-alias dl="sudo docker logs"
-alias drm="sudo docker rm"
-alias drmi="sudo docker rmi"
+alias dps="docker ps"
+alias dpsa="docker ps -a"
+alias di="docker images"
+alias dl="docker logs"
+alias dn="docker network ls"
+alias drm="docker rm"
+alias drmi="docker rmi"
+alias drmn="docker network rm"
 
 # Source tmux configuration
 [ -f /tmp/tmux-1000/default ] && tmux source-file ~/.tmux.conf

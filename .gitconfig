@@ -4,3 +4,6 @@
 
 [url "git@github.com:modood"]
 	insteadOf = https://github.com/modood
+
+[core]
+	quotepath = false

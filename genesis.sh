@@ -10,6 +10,7 @@ aptKeys=(
 for k in ${aptKeys[@]}; do echo "Adding apt key: ${k}"; curl -fsSL $k | sudo apt-key add -; done
 
 aptRepositories=(
+  ppa:jonathonf/vim # vim
   ppa:git-core/ppa # git
   ppa:ansible/ansible # ansible
   "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" # docker-ce
@@ -118,6 +119,16 @@ do
   fi
 done
 
+if [[ `tmux -V` != "tmux 2.8" ]]; then
+  curl -L https://github.com/tmux/tmux/releases/download/2.8/tmux-2.8.tar.gz -o tmux-2.8.tar.gz
+  tar -zxvf tmux-2.8.tar.gz
+  cd tmux-2.8
+  sudo apt install libevent-dev ncurses-dev
+  sudo ./configure
+  sudo make
+  sudo make install
+  cd .. && sudo rm -rf tmux-2.8 tmux-2.8.tar.gz
+fi
 
 # https://github.com/robbyrussell/oh-my-zsh
 if [ ! -d $HOME/.oh-my-zsh ]; then
@@ -155,6 +166,7 @@ if [ ! -d $HOME/.gvm ]; then
   export GVM_ROOT="$HOME/.gvm"
   [ -s "$GVM_ROOT/scripts/gvm" ] && \. "$GVM_ROOT/scripts/gvm"
 
+  sed -i "s/https:\/\/go.googlesource.com\/go/http:\/\/github.com\/golang\/go/g" $HOME/.gvm/scripts/install
   gvm install go1.4 -B
   gvm use go1.4
   gvm install go1.11

@@ -1,7 +1,3 @@
-[user]
-	email = modood@qq.com
-	name = modood
-
 [url "git@github.com:modood"]
 	insteadOf = https://github.com/modood
 

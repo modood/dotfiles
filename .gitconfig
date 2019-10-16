@@ -1,5 +1,11 @@
-[url "git@github.com:modood"]
-	insteadOf = https://github.com/modood
+#[user]
+#	email = modood@qq.com
+#	name = modood
+#
+#[url "git@github.com:modood"]
+#	insteadOf = https://github.com/modood
 
 [core]
 	quotepath = false
+	pager = less -x1,5
+

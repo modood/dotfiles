@@ -4,3 +4,4 @@
 --ignore-dir=vendor
 
 --ignore-file=is:yarn.lock
+--ignore-file=match:test.go

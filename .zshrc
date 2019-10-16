@@ -55,7 +55,7 @@ function diff () { colordiff -u $@ | less; }
 if [ ! -d "$HOME/.socks-cli" ]; then
   git clone https://github.com/zjx20/socks-cli $HOME/.socks-cli
 fi
-alias ss="source ~/.socks-cli/activate"
+alias ss5="source ~/.socks-cli/activate"
 
 alias dps="docker ps"
 alias dpsa="docker ps -a"
@@ -231,6 +231,11 @@ fbi () {
 # sz - source xmodmap
 sx () {
     xmodmap ~/.Xmodmap
+}
+
+# ack search source code
+ackg () {
+   grep -rn $1 ./
 }
 
 # j - fzf integration with autojump

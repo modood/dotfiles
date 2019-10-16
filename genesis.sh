@@ -64,6 +64,8 @@ done
 # pstack                        pstack                                Display stack trace of a running process
 # strace                        strace                                System call tracer
 # colordiff                     colordiff                             tool to colorize 'diff' output
+# bwm-ng                        bwm-ng                                small and simple console-based bandwidth monitor
+# corkscrew                     corkscrew                             tunnel TCP connections through HTTP proxies
 
 # python-pip                    pip, pip2                             alternative Python package installer
 # python-pip                    pip3                                  alternative Python package installer - Python 3 version of the package
@@ -97,7 +99,7 @@ done
 sudo apt update
 sudo apt install -y sudo lsb-release lsb-core net-tools telnet wget curl git git-extras make gcc g++ pkg-config unzip rar unrar \
                     mercurial binutils build-essential bison apt-transport-https ca-certificates software-properties-common gdebi \
-                    sysstat nmon htop atop iotop iftop nethogs ethtool nicstat dstat vnstat pstack strace colordiff \
+                    sysstat nmon htop atop iotop iftop nethogs ethtool nicstat dstat vnstat pstack strace colordiff bwm-ng corkscrew \
                     python-pip python3-pip tmux zsh autojump ack-grep vim vim-gtk exuberant-ctags i3 suckless-tools flameshot ansible fcitx \
                     mycli mongodb-clients mongo-tools redis-tools \
                     usb-creator-gtk telegram-desktop transmission vlc libreoffice virtualbox \
@@ -108,6 +110,7 @@ aptCache=/var/cache/apt/archives
 debPackages=(
   http://cdn2.ime.sogou.com/dl/index/1524572264/sogoupinyin_2.2.0.0108_amd64.deb
   https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  https://cdn.mysql.com//Downloads/MySQLGUITools/mysql-workbench-community_8.0.16-1ubuntu18.04_amd64.deb
 )
 for i in ${debPackages[@]};
 do
@@ -172,7 +175,19 @@ if [ ! -d $HOME/.gvm ]; then
   gvm install go1.11
   gvm use go1.11 --default
 
-  go get -u github.com/rgburke/grv/cmd/grv
+  # 2fa       two-factor authentication
+  # tparse    parses go test output
+  # pp        parses panic stack traces
+  # bed       binary editor
+  # ccat      colorizing cat
+  # dive      exploring each layer in a docker image
+  go get -u rsc.io/2fa \
+            github.com/mfridman/tparse \
+            github.com/maruel/panicparse/cmd/pp \
+            github.com/itchyny/bed/cmd/bed \
+            github.com/jingweno/ccat \
+            github.com/wagoodman/dive \
+
 fi
 
 # https://github.com/modood/dotfiles

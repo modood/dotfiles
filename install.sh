@@ -7,7 +7,6 @@ dotfiles=(
   .ackrc
   .ansible.cfg
   .ctags
-  .gitconfig
   .myclirc
   .vimshrc
   .Xmodmap

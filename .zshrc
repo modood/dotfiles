@@ -19,6 +19,8 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+    # WARNING: safe-paste must set before vi-mode
+    safe-paste                  # https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/safe-paste
     vi-mode                     # https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/vi-mode
     history-substring-search    # https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/history-substring-search
 )
@@ -49,6 +51,7 @@ alias sc="vi ~/.zshrc"
 alias scs=". ~/.zshrc"
 
 alias h="history | grep"
+unalias diff
 function diff () { colordiff -u $@ | less; }
 
 # socks-cli

@@ -1,7 +1,12 @@
 --ignore-dir=node_modules
 --ignore-dir=docs
+--ignore-dir=go
 --ignore-dir=coverage
 --ignore-dir=vendor
+--ignore-dir=.build
+--ignore-dir=.cache
 
 --ignore-file=is:yarn.lock
+--ignore-file=is:go.sum
 --ignore-file=match:test.go
+--ignore-file=match:.tag

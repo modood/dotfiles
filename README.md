@@ -12,6 +12,7 @@ file list:
 `.ackrc`
 `.ansible.cfg`
 `.ctags`
+`.inputrc`
 `.myclirc`
 `.vimshrc`
 `.Xmodmap`
